@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="{% static 'css/additem.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="card">
+            <div class="left">
+                <img src="https://img.freepik.com/free-vector/concept-image-upload-landing-page_23-2148303744.jpg?w=740&t=st=1679971235~exp=1679971835~hmac=af94d7ee185289ae7c35d5dab6fbcb81b6b9d211384ae28b97233c007b29af15" alt="">
+            </div>
+
+            <div class="right">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="input-group">
+                        {{ form.image }}
+                    </div>
+
+                    <div class="input-field">
+                        <!-- <label for="pName">Product Name</label> -->
+                        {{ form.name }}
+                    </div>
+
+                    <div class="input-field">
+                        <!-- <label for="pPrice">Product Price</label> -->
+                        {{ form.price }}
+                    </div>
+
+                    <div class="input-field">
+                        <!-- <label for="pName">Product Description</label> -->
+                        {{ form.description }}
+                    </div>
+
+                    <button class="btn" type="submit" >Add</button>
+                </form>
+            </div>    
+        </div>
+            
+        </div>
+    </div>
+    <!-- https://img.freepik.com/free-vector/concept-image-upload-landing-page_23-2148303744.jpg?w=740&t=st=1679971235~exp=1679971835~hmac=af94d7ee185289ae7c35d5dab6fbcb81b6b9d211384ae28b97233c007b29af15 -->
+{% endblock %}

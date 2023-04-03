@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="box">            
+            <div class="form-box left">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <h2 class="form-heading">Registeration</h2>
+                    <div class="input-group">
+                        <div class="input-field">
+                            <label for="username">Username</label>
+                            <!-- <input type="text" name="name" id="name" placeholder="Username" required minlength="3"> -->
+                            {{ form.username }}
+                        </div>
+                        <div class="input-field">
+                            <label for="email">E-Mail</label>
+                            <!-- <input type="email" name="email" id="email" placeholder="E-Mail" required> -->
+                            {{ form.email }}
+                        </div>
+                        <div class="input-field">
+                            <label for="password1">Password</label>
+                            <!-- <input type="password" name="password1" id="password1" placeholder="Password (at least 8 characters)" required minlength="8"> -->
+                            {{ form.password1 }}
+                        </div>
+                        <div class="input-field">
+                            <label for="password2">Confirm Password</label>
+                            <!-- <input type="password" name="password2" id="password2" placeholder="Confirm Password (at least 8 characters)" required minlength="8"> -->
+                            {{ form.password2 }}
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" class="btn">Register</button>
+                    </div>    
+                </form>
+            </div>
+            
+            <div class="right">
+                    <!-- <img src="https://img.freepik.com/free-vector/employer-meeting-job-applicant-pre-employment-assessment-employee-evaluation-assessment-form-report-performance-review-concept-illustration_335657-2058.jpg?size=626&ext=jpg&ga=GA1.2.1977915192.1679965465&semt=sph" alt=""> -->
+                    <img src="https://img.freepik.com/free-vector/competent-resume-writing-professional-cv-constructor-online-job-application-profile-creation-african-american-woman-filling-up-digital-form-concept-illustration_335657-2053.jpg?w=740&t=st=1679967530~exp=1679968130~hmac=6927ab32f42c7249a0fb123d3b49fae3a9298605cf536e90f0de8402332c58ee" alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}

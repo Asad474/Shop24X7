@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --primary-font : 'Poppins', sans-serif;
+    --secondary-font : 'Roboto', sans-serif;
+    --primary-text-color : rgb(30,48,80);
+    --secondary-text-color : rgb(30,68,90);
+}
+
+body{
+    font-family: var(--primary-font);
+    color: var(--primary-text-color);
+}
+
+.container{
+    width: 100%;
+    height : 100vh;
+    position: relative;
+    padding: 30px 20px;
+}
+
+.container::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('https://img.freepik.com/free-vector/gradient-dynamic-blue-lines-background_23-2148995756.jpg?size=626&ext=jpg') no-repeat center center/cover;
+    filter: blur(8px);
+    z-index: -1;
+
+
+}
+
+.box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);   
+    width: 400px;
+    border: 1px solid black;
+    padding: 40px 30px 30px;
+    /* text-align: center; */
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 20px 20px 10px rgba(black, black, black, 0.8);
+}
+
+.form-heading{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-group{
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: var(--secondary-font);
+    font-weight: 500;
+}
+
+.input-field{
+    display: flex;
+    flex-direction: column;
+    margin-block-end : 15px;
+}
+
+.input-field input{
+    width: 100%;
+    padding: 10px 5px 10px 15px;
+    outline: none;
+    border: none;
+    background-color: rgb(182, 182, 182);
+    transition: .2s ease-in-out;
+    margin-block-start: 5px;
+    font-family: var(--secondary-font);
+    font-weight: 500;
+    font-size: 15px;
+    border-radius: 5px;
+    color: var(--secondary-text-color);
+}
+
+.input-field input:focus{
+    background-color: rgb(163, 163, 163);
+    border-bottom: 1px solid black;
+}
+
+.btn-group{
+    width: 100%;
+    text-align: right;
+}
+
+
+.btn{
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: crimson;
+    border-radius: 10px;
+    color: var(--secondary-text-color);
+}
+
+.btn:hover{
+    background-color: rgb(177, 16, 48);
+}
+

@@ -1,0 +1,87 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css_link %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="{% static 'css/sellerItems.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="left">
+            <div class="close"><span class="material-symbols-outlined">
+                    close
+                </span></div>
+            <div class="seller">
+                <img src="https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=740&t=st=1680064738~exp=1680065338~hmac=2f8d09f8a58c5ac443e62b6ff54d26f629d0c92947582ee2c2426239594c72ad"
+                    alt="profile">
+                <h2 class="shName">Shop Name : {{ shop.name }}<h2>
+                <h3 class="sOwner">Seller Name : {{ shop.user.username }}<h3>
+                <p class="shAddress">
+                    Address : {{ shop.address }}
+                    <br>State : {{ shop.state }}
+                    <br>City : {{ shop.city }}
+                    <br>Pincode : {{ sh }}
+                </p>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="ham"><span class="material-symbols-outlined">
+                    menu
+                </span>
+            </div>
+            <h1 class="title">Our Products</h1>
+            <div class="product-container">
+                {% for p in products %}
+                    <div class="product">
+                        <img src="https://cdn-icons-png.flaticon.com/512/679/679922.png" alt="Product">
+                        <h2 class="item">{{ p.name }}</h2>
+                        <p class="price">${{ p.price }}</p>
+                        <p class="desc">{{ p.description | truncatewords:8 }}</p>
+                    </div>
+                {% endfor %}    
+                <div class="product">
+                    <img src="https://cdn-icons-png.flaticon.com/512/679/679922.png" alt="Product">
+                    <h2 class="item">Item</h2>
+                    <p class="price">$3</p>
+                    <p class="desc">This is a description</p>
+                </div>
+                <div class="product">
+                    <img src="https://cdn-icons-png.flaticon.com/512/679/679922.png" alt="Product">
+                    <h2 class="item">Item</h2>
+                    <p class="price">$3</p>
+                    <p class="desc">This is a description</p>
+                </div>
+                <div class="product">
+                    <img src="https://cdn-icons-png.flaticon.com/512/679/679922.png" alt="Product">
+                    <h2 class="item">Item</h2>
+                    <p class="price">$3</p>
+                    <p class="desc">This is a description</p>
+                </div>
+                <div class="product">
+                    <img src="https://cdn-icons-png.flaticon.com/512/679/679922.png" alt="Product">
+                    <h2 class="item">Item</h2>
+                    <p class="price">$3</p>
+                    <p class="desc">This is a description</p>
+                </div>
+                <div class="product">
+                    <img src="https://cdn-icons-png.flaticon.com/512/679/679922.png" alt="Product">
+                    <h2 class="item">Item</h2>
+                    <p class="price">$3</p>
+                    <p class="desc">This is a description</p>
+                </div>
+                <div class="product">
+                    <img src="https://cdn-icons-png.flaticon.com/512/679/679922.png" alt="Product">
+                    <h2 class="item">Item</h2>
+                    <p class="price">$3</p>
+                    <p class="desc">This is a description</p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <script src="{% static 'js/sellerItem.js' %}"></script>
+{% endblock %}
